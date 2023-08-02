@@ -5,22 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Final</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Lumanosimo&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div class="contenedor">
-        <nav>
-            <h1>Ricky & Morty</h1>
-        </nav>
-        <div class="filtros">
-            <button class="todos">Todos</button>
-            <button class="mujeres">Mujeres</button>
-            <button class="hombres">Hombres</button>
+        <div class="titulo">
+            <nav class="abajo">
+                <h1>Ricky & Morty</h1>
+            </nav>
+            <nav class="arriba">
+                <h1>Ricky & Morty</h1>
+            </nav>
+        </div>
+        <div class="botonesFiltro">
+            <button class="botonFiltroApretado" id="todos">Todos</button>
+            <button class="filtros" id="mujeres">Mujeres</button>
+            <button class="filtros" id="hombres">Hombres</button>
         </div>
         <section>
             <div class="tarjeta">
                 <div class="card">
-                    <img src=>
+                    <img class="imgPersonaje" src=>
                     <p>Nombre: </p>
                     <h2>morty</h2>
                     <p>Genero: </p>
@@ -113,12 +121,12 @@
         </section>
 
         <footer class="footer">
-            <div>
-                <button class="principio"><<</button>
-                <button class="antes">-</button>
-                <caption class="nroPagina">Pag:</caption>
-                <button class="despues">+</button>
-                <button class="final">>></button>
+            <div class="paginado">
+                <button class="botonPaginadoApagado" id="principio"><<</button>
+                <button class="botonPaginadoApagado" id="antes">-</button>
+                <caption class="botonPaginado" id="nroPagina">Pag:</caption>
+                <button class="botonPaginado" id="despues">+</button>
+                <button class="botonPaginado" id="final">>></button>
             </div>
         </footer>
     </div>
