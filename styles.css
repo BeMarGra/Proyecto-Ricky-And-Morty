@@ -1,0 +1,42 @@
+body{
+    width: 900px;
+}
+
+.contenedor{
+    width: 100%;
+}
+.filtros {
+    text-align: end;
+    left: 20px;
+}
+
+.tarjeta {
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+
+}
+.card{
+    width: 180px;
+    height: 350px;
+    padding: 6px;
+    border-style:ridge;
+    border-color: black;
+    border-radius: 6px;
+    margin: 5px 6px;
+}
+
+
+footer {
+
+    color: rgb(28, 28, 239);
+    width: 100%;
+  }
+  
+  nav {
+    color: lightseagreen;
+    /* position: fixed; */
+    width: 100%;
+    text-align: center;
+  }
+  
+ 
