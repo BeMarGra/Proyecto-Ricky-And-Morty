@@ -18,7 +18,9 @@ function mostrar(array){
 for(let i = 0; i < array.length; i++){
     $tarjeta.innerHTML +=   `<div id="tarjeta">
                                 <div class="card">
-                                    <img class="imgPersonaje" src=${array[i].image}>
+                                    <div class="contenedorImg">
+                                        <img class="imgPersonaje" src=${array[i].image}>
+                                    </div>
                                     <p>Nombre:  </p>
                                     <h2>${array[i].name}</h2>
                                     <p>Genero: ${array[i].gender}</p>

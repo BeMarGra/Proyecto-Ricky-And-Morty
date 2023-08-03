@@ -1,31 +1,24 @@
-
 body{
     position: absolute;
     display: flex;
     background-color: rgb(247 249 248);
-    justify-content: center;
-    width: 3000px;
-    height: 3500px;
-
 }
 
 .contenedor{
     display: flex;
     position: absolute;
     justify-content: flex-start;
-    width: 2000px;
-    height: 3450px;
-    background-color: rgb(228 237 234);
+    width: 1330px;
+    height: 3440px;
+    background-color: rgb(149, 179, 169);
     flex-direction: column;
     box-shadow: #8a8a8a47 5px 5px;
-
-
-
 }
+
 .titulo{
     display: flex;
-    width: 2000px;
-    height: 500px;
+    width: 1330px;
+    height: 150px;
     background-color: black;
 }
 
@@ -34,11 +27,13 @@ h1{
 }
 
 .palabras{
-    width: 500px;
-    height: 123px;
-    left: 800px;
     display: flex;
     position: relative;
+    width: 500px;
+    height: 123px;
+    left: 385px;
+    margin-bottom: auto;
+    
 }
 
 nav{
@@ -46,6 +41,7 @@ nav{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
 }
+
 .arriba{
     position: absolute;
     display: flex;
@@ -57,6 +53,7 @@ nav{
     right: 2px;
     top: 2px;
 }
+
 .abajo{
     position: absolute;
     display: flex;
@@ -64,21 +61,21 @@ nav{
     height: 123px;
     justify-content: center;
     flex-direction: column;
-    color: rgb(8, 158, 218);
+    color: rgb(45, 81, 241);
     left: 2px;
     bottom: 2px;
-
+    
 }
+
 .botonesFiltro {
     position: relative;
     text-align: end;
-    top: 80px;
+    top: 30px;
     right: 25px;
-  
 }
 
 .filtros{
-    width: 100px;
+    width: 110px;
     height: 40px;
     font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -90,7 +87,7 @@ nav{
 }
 
 .botonFiltroApretado{
-    width: 100px;
+    width: 110px;
     height: 40px;
     font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -102,44 +99,55 @@ nav{
     background-color: rgb(78 145 99);
 }
 
-
 section{
-    width: 1800px;
+    width: 1330px;
     height: 3200px;
-    margin-left: 80px;
-    margin-top: 50px;
-    
+    margin-left: 18px;
+    margin-top: 30px;
 }
 
 #tarjeta {
-    /* background-color: rgb(234, 240, 243); */
-    
     padding: 4px;
-    margin: 30px 50px;
-    display: grid; 
-    grid-template-columns: 420px 420px 420px 420px;
-   
+    margin: 11px 0px;
+    display: grid;
+    grid-template-columns: 324px 328px 327px 327px;
 }
 .card{
-    background-color: rgb(234, 240, 243);
-    width: 350px;
-    height: 550px;
-    justify-content: center;
+    background-color: rgb(216, 232, 240);
+    width: 300px;
+    height: 570px;
 }
+.contenedorImg{
+    display: flex;
+    position: relative;
+    width: 280px;
+    margin-top: 10px;
+    margin-left: 10px;
+    overflow: hidden;
+    
+    
+}
+.card:hover {
+    transition:cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s;
+    box-shadow: #66636398 10px 10px;
+  }
+
 #tarjeta .imgPersonaje{
     width: 280px;
-    margin-top: 12px;
-    margin-left: 35px;
-
+    
 }
+
+#tarjeta .imgPersonaje:hover {
+    transform: scale(1.2);
+  }
 
 #tarjeta p{
     margin-bottom: 2px;
     margin-left: 4px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 14px;
-    
 }
+
 #tarjeta h2{
     font-family: 'Cardo', serif;
     font-family: 'Lumanosimo', cursive;
@@ -149,7 +157,7 @@ section{
     font-size: 20px;
 }
 
-footer {
+.cotenedorPaginado {
     display: flex;
     color: rgb(24, 85, 24);
     font-weight: bold;
@@ -171,6 +179,7 @@ footer {
     color: white;
     font-weight: bold;
   }
+
   .botonPaginadoApagado{
     width: 50px;
     height: 25px;
@@ -182,4 +191,12 @@ footer {
     font-weight: bold;
   }
   
- 
+ footer{
+    display: flex;
+    flex-direction: row;
+    width: 1330px;
+    height: 120px;
+    background-color: black;
+    color: white;
+    text-align: center;
+ }
