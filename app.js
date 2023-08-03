@@ -1,6 +1,5 @@
 // ---variables
-let personajes ;
-
+let $tarjeta = document.getElementById('tarjeta');
 
 
 
@@ -11,6 +10,23 @@ fetch('https://rickandmortyapi.com/api/character')
     return datos.json();
 })
 .then((datos)=>{
-    personajes = datos.results;
-    console.log(personajes)
-})
+   let personajes = datos.results;
+    mostrar(personajes);
+});
+
+function mostrar(array){
+for(let i = 0; i < array.length; i++){
+    $tarjeta.innerHTML +=   `<div id="tarjeta">
+                                <div class="card">
+                                    <img class="imgPersonaje" src=${array[i].image}>
+                                    <p>Nombre:  </p>
+                                    <h2>${array[i].name}</h2>
+                                    <p>Genero: ${array[i].gender}</p>
+                                    <p>Especie: ${array[i].species} </p>
+                                    <p>Estado: ${array[i].status}</p>
+                                    <p>Origen: ${array[i].origin.name}</p>
+                                    <p>Locación: ${array[i].location.name}</p>
+                                </div>
+                            </div>`
+}
+}
