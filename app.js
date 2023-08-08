@@ -1,10 +1,18 @@
 // ---- elementos del html
+
+//------------filtros
 let $tarjeta = document.getElementById('tarjeta');
 let $mujerBoton = document.getElementById('mujeres');
 let $hombreBoton = document.getElementById('hombres');
 let $sinGeneroBoton = document.getElementById('sin');
 let $desconocidoBoton = document.getElementById('desconocido');
 let $todosBoton = document.getElementById('todos');
+//------------paginado
+let $principioBoton = document.getElementById('principio');
+let $menosBoton = document.getElementById('antes');
+let $numeroPagina = document.getElementById('nroPagina')
+let $masBoton = document.getElementById('despues');
+let $finalBoton = document.getElementById('final');
 
 
 //---variables 
@@ -16,17 +24,24 @@ let resultadoUno ;
 let resultadoDos ;
 let resultadoTres ;
 let resultadoCuatro ;
+//let nroPagina ;
+let pagina = 1 ;
 
 //---fetch
 
-fetch('https://rickandmortyapi.com/api/character')
-.then((datos)=>{
-    return datos.json();
-})
-.then((datos)=>{
-   personajes = datos.results;
-    mostrar(personajes);
-});
+function usarFetch(numeroPagina){
+    fetch(`https://rickandmortyapi.com/api/character/?page=${numeroPagina}`)
+    .then((datos)=>{
+        return datos.json();
+    })
+    .then((datos)=>{
+        personajes = datos.results;
+        mostrar(personajes);
+    });
+}
+usarFetch(pagina);
+$numeroPagina.innerHTML = `Pág. ${pagina}/42`;
+
 
 function mostrar(array){
     $tarjeta.innerHTML = '';
@@ -48,7 +63,9 @@ for(let i = 0; i < array.length; i++){
 console.log(personajes);
 }
 
-// ---- FILTROS---------
+//--------------------------------------
+// -------------- FILTROS --------------
+//--------------------------------------
 
 function filtrarTodos(){
     $mujerBoton.classList.remove('botonFiltroApretado');
@@ -132,7 +149,44 @@ function filtrarDesconocido(){
 mostrar(resultadoTres);
 }   
 
- 
+
+//--------------------------------------------------------------
+//----------------------PAGINADOS-------------------------------
+//--------------------------------------------------------------
+
+function siguiente(){
+    pagina++;
+    usarFetch(pagina);
+    $numeroPagina.innerHTML = `Pág. ${pagina}/42`;
+    if (pagina === 42){
+        $finalBoton.disabled = true;
+        $masBoton.disabled = true;
+    }
+}
+
+function anterior(){
+    pagina--;
+    usarFetch(pagina);
+    $numeroPagina.innerHTML = `Pág. ${pagina}/42`;
+    if (pagina === 1){
+        $finalBoton.disabled = true;
+        $masBoton.disabled = true;
+    }
+}
+
+function primera(){
+    usarFetch(1);
+    $numeroPagina.innerHTML = `Pág. 1/42`;
+    $principioBoton.disabled = true;
+    $menosBoton.disabled = true;
+}
+
+function ultima(){
+
+    usarFetch(42);
+    $numeroPagina.innerHTML = `Pág. 42/42`;
+    
+}
 
 //------eventos-----
 
@@ -141,3 +195,9 @@ $hombreBoton.addEventListener('click',filtrarHombres)
 $sinGeneroBoton.addEventListener('click',filtrarSinGenero)
 $desconocidoBoton.addEventListener('click',filtrarDesconocido)
 $todosBoton.addEventListener('click',filtrarTodos)
+//------------------------------------------------------
+
+$principioBoton.addEventListener('click',primera)
+$masBoton.addEventListener('click',siguiente)
+$menosBoton.addEventListener('click',anterior)
+$finalBoton.addEventListener('click',ultima)
