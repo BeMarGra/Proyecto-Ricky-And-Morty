@@ -24,7 +24,6 @@ let resultadoUno ;
 let resultadoDos ;
 let resultadoTres ;
 let resultadoCuatro ;
-//let nroPagina ;
 let pagina = 1 ;
 
 //---fetch
@@ -39,9 +38,21 @@ function usarFetch(numeroPagina){
         mostrar(personajes);
     });
 }
-usarFetch(pagina);
-$numeroPagina.innerHTML = `Pág. ${pagina}/42`;
 
+//-------------------------------------------
+//----------- FETCH INICIAL------------------
+//-------------------------------------------
+
+usarFetch(pagina);
+    $numeroPagina.innerHTML = `Pág. ${pagina}/42`;
+    // $principioBoton.disabled = true;
+    // $menosBoton.disabled = true;
+    // $principioBoton.classList.remove('botonPaginado');
+    // $principioBoton.classList.add('botonPaginadoApagado');
+    // $menosBoton.classList.remove('botonPaginado');
+    // $menosBoton.classList.add('botonPaginadoApagado');
+
+        // ............ FUNCION MOSTRAR .............................
 
 function mostrar(array){
     $tarjeta.innerHTML = '';
@@ -154,39 +165,87 @@ mostrar(resultadoTres);
 //----------------------PAGINADOS-------------------------------
 //--------------------------------------------------------------
 
-function siguiente(){
-    pagina++;
+function primera(){
     usarFetch(pagina);
-    $numeroPagina.innerHTML = `Pág. ${pagina}/42`;
-    if (pagina === 42){
-        $finalBoton.disabled = true;
-        $masBoton.disabled = true;
-    }
+        $numeroPagina.innerHTML = `Pág. 1/42`;
+
+        $principioBoton.disabled = true;
+        $menosBoton.disabled = true;
+
+        $principioBoton.classList.remove('botonPaginado');
+        $principioBoton.classList.add('botonPaginadoApagado');
+        $menosBoton.classList.remove('botonPaginado');
+        $menosBoton.classList.add('botonPaginadoApagado');      
 }
 
 function anterior(){
     pagina--;
     usarFetch(pagina);
-    $numeroPagina.innerHTML = `Pág. ${pagina}/42`;
+        $numeroPagina.innerHTML = `Pág. ${pagina}/42`;
+
+        $principioBoton.disabled = false;
+        $menosBoton.disabled = false;
+        $masBoton.disabled = false;
+        $finalBoton.disabled = false;
+
+        $principioBoton.classList.remove('botonPaginadoApagado');
+        $principioBoton.classList.add('botonPaginado');
+        $menosBoton.classList.remove('botonPaginadoApagado');
+        $menosBoton.classList.add('botonPaginado');
+      
     if (pagina === 1){
-        $finalBoton.disabled = true;
-        $masBoton.disabled = true;
-    }
+        usarFetch(pagina);
+            $numeroPagina.innerHTML = `Pág. 1/42`;
+
+            $principioBoton.disabled = true;
+            $menosBoton.disabled = true;
+
+            $principioBoton.classList.remove('botonPaginado');
+            $principioBoton.classList.add('botonPaginadoApagado');
+            $menosBoton.classList.remove('botonPaginado');
+            $menosBoton.classList.add('botonPaginadoApagado');
+    } 
 }
 
-function primera(){
-    usarFetch(1);
-    $numeroPagina.innerHTML = `Pág. 1/42`;
-    $principioBoton.disabled = true;
-    $menosBoton.disabled = true;
+function siguiente(){
+    pagina++;
+    usarFetch(pagina);
+        $numeroPagina.innerHTML = `Pág. ${pagina}/42`;
+
+        $principioBoton.disabled = false;
+        $menosBoton.disabled = false;
+        $masBoton.disabled = false;
+        $finalBoton.disabled = false;
+
+        $principioBoton.classList.remove('botonPaginadoApagado');
+        $principioBoton.classList.add('botonPaginado');
+        $menosBoton.classList.remove('botonPaginadoApagado');
+        $menosBoton.classList.add('botonPaginado');
+        
+    if (pagina === 42){
+        $finalBoton.disabled = true;
+        $masBoton.disabled = true;
+
+        $finalBoton.classList.remove('botonPaginado');
+        $finalBoton.classList.add('botonPaginadoApagado');
+        $masBoton.classList.remove('botonPaginado');
+        $masBoton.classList.add('botonPaginadoApagado');
+    }
+
 }
 
 function ultima(){
-
-    usarFetch(42);
+    usarFetch(pagina);
     $numeroPagina.innerHTML = `Pág. 42/42`;
-    
+        $finalBoton.disabled = true;
+        $masBoton.disabled = true;
+
+        $masBoton.classList.remove('botonPaginado');
+        $masBoton.classList.add('botonPaginadoApagado');
+        $finalBoton.classList.remove('botonPaginado');
+        $finalBoton.classList.add('botonPaginadoApagado');
 }
+
 
 //------eventos-----
 
