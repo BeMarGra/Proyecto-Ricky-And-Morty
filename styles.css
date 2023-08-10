@@ -8,15 +8,16 @@ body{
     display: flex;
     position: absolute;
     justify-content: flex-start;
-    width: 1330px;
+    width: 1500px;
     height: 3440px;
     background-color: rgb(149, 179, 169);
     flex-direction: column;
     box-shadow: #8a8a8a47 5px 5px;
 }
-
+/*--------------------------------------------------------------------------------------------------*/
 .titulo{
     display: flex;
+    justify-content: center;
     width: 100%;
     height: 150px;
     background-color: black;
@@ -31,7 +32,6 @@ h1{
     position: relative;
     width: 500px;
     height: 123px;
-    left: 385px;
     margin-bottom: auto;
     
 }
@@ -66,12 +66,18 @@ nav{
     bottom: 2px;
     
 }
-
+/*--------------------------------------------------------------------------------------------*/
 .botonesFiltro {
+    display: flex;
+    justify-content: flex-end;
     position: relative;
     text-align: end;
     top: 30px;
-    right: 25px;
+}
+
+.contenedorFiltros{
+    width: 650px;
+    margin-right: 15px;
 }
 
 .filtros{
@@ -99,8 +105,10 @@ nav{
     border-style: inset;
     background-color: rgb(78 145 99);
 }
-
+/*-------------------------------------------------------------------------------------------*/
 section{
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 3200px;
     margin-left: 18px;
@@ -158,7 +166,7 @@ section{
     margin-left: 4px;
     font-size: 20px;
 }
-
+/*------------------------------------------------------------------------------------------------*/
 .cotenedorPaginado {
     display: flex;
     color: rgb(24, 85, 24);
@@ -203,7 +211,7 @@ section{
     color: #6d6969;
     font-weight: bold;
   }
-  
+  /*-------------------------------------------------------------------------------------------------*/
  footer{
     display: flex;
     flex-direction: row;
@@ -224,21 +232,26 @@ span{
 /* ---------------------------Responsive------------------------------*/
 /*--------------------------------------------------------------------*/
 
-@media (max-width : 850px){
+/*=========================================================*/
+/*================== tablet ===============================*/
+/*=========================================================*/
+
+@media (min-width : 650px) and (max-width : 900px){
 
     .contenedor{
         display: flex;
         position: absolute;
         justify-content: flex-start;
-        width: 850px;
+        width: 900px;
         height: 6000px;
         background-color: rgb(149, 179, 169);
         flex-direction: column;
         box-shadow: #8a8a8a47 5px 5px;
     }
-
+/*---------------------------------------------------------------------------------*/
     .titulo{
         display: flex;
+        justify-content: center;
         width: 100%;
         height: 60px;
         background-color: black;
@@ -253,7 +266,6 @@ span{
         position: relative;
         width: 500px;
         height: 60px;
-        left: 190px;
         margin-bottom: 2px;
         align-items: center;
         flex-direction: column;
@@ -290,14 +302,17 @@ span{
         bottom: 2px;
         
     }
-    
+/*-------------------------------------------------------------------------------------------------*/
     .botonesFiltro {
-        position: relative;
-        text-align: start;
         display: flex;
-        width: 100%;
         justify-content: center;
-        top: 21px;
+        position: relative;
+        text-align: center;
+
+    }
+
+    .contenedorFiltros{
+        width: 650px;
     }
     
     .filtros{
@@ -324,8 +339,10 @@ span{
         border-style: inset;
         background-color: rgb(78 145 99);
     }
-    
+    /*--------------------------------------------------------------------------------------*/
     section{
+        display: flex;
+        justify-content: center;
         width: 100%;
         height: 6200px;
         margin-left: 0px;
@@ -386,7 +403,7 @@ span{
         margin-left: 4px;
         font-size: 20px;
     }
-    
+    /*------------------------------------------------------------------------------------------------*/
     .cotenedorPaginado {
         display: flex;
         color: rgb(24, 85, 24);
@@ -431,7 +448,239 @@ span{
         color: #6d6969;
         font-weight: bold;
       }
-      
+      /*-------------------------------------------------------------------------------*/
+     footer{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 80px;
+        background-color: black;
+        color: white;
+        text-align: center;
+     }
+
+     span{
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    
+}
+
+/*================================================================*/
+/*======================== celular ===============================*/
+/*================================================================*/
+
+@media (min-width : 320px) and (max-width : 649px){
+    
+    .contenedor{
+        display: flex;
+        position: absolute;
+        justify-content: flex-start;
+        width: 650px;
+        height: 11050px;
+        background-color: rgb(149, 179, 169);
+        flex-direction: column;
+        box-shadow: #8a8a8a47 5px 5px;
+    }
+/*-------------------------------------------------------------------------*/
+    .titulo{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 60px;
+        background-color: black;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+
+    .palabras{
+        display: flex;
+        position: relative;
+        width: 500px;
+        height: 60px;
+        margin-bottom: 2px;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+    
+    nav{
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 40px;
+    }
+    
+    .arriba{
+        position: absolute;
+        display: flex;
+        color: #b7ecdb;
+        width: 350px;
+        height: 40px;
+        justify-content: center;
+        flex-direction: column;
+        /* right: 2px;
+        bottom: 2px; */
+    }
+    
+    .abajo{
+        position: absolute;
+        display: flex;
+        width: 350px;
+        height: 40px;
+        justify-content: center;
+        flex-direction: column;
+        color: rgb(45, 81, 241);
+        /* left: 2px;
+        bottom: 2px; */
+    }
+/*-----------------------------------------------------------------------------------*/
+    /* .botonesFiltro {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+    }
+
+    .contenedorFiltros{
+        width: 650px;
+    }
+    
+    .filtros{
+        width: 115px;
+        height: 40px;
+        font-size: 16px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-style:italic;
+        margin-left: 8px;
+        background-image:linear-gradient(rgb(215, 245, 235),rgb(202, 230, 216));
+        border: 2px;
+        border-style: outset;
+    }
+    
+    .botonFiltroApretado{
+        width: 115px;
+        height: 40px;
+        font-size: 16px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-style: italic;
+        margin-left: 8px;
+        color: rgb(242 245 244);
+        border: 3px;
+        border-style: inset;
+        background-color: rgb(78 145 99);
+    } */
+/*--------------------------------------------------------------------------------*/
+    section{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 10800px;
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+    
+    #tarjeta {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 4px;
+        margin: 11px 0px;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(216, 232, 240);
+        width: 300px;
+        height: 560px;
+        margin-bottom: 20px;
+
+    }
+    .contenedorImg{
+        display: flex;
+        position: relative;
+        width: 280px;
+        margin-top: 10px;
+        margin-left: 10px;
+        overflow: hidden;
+        
+        
+    }
+    .card:hover {
+        transition:cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s;
+        box-shadow: #66636398 10px 10px;
+      }
+    
+    #tarjeta .imgPersonaje{
+        width: 280px;
+        
+    }
+    
+    #tarjeta .imgPersonaje:hover {
+        transform: scale(1.2);
+      }
+    
+    #tarjeta p{
+        
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 14px;
+    }
+    
+    #tarjeta h2{
+        font-family: 'Cardo', serif;
+        font-family: 'Lumanosimo', cursive;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        margin-left: 4px;
+        font-size: 20px;
+    }
+/*------------------------------------------------------------------------------------------*/
+    .cotenedorPaginado {
+        display: flex;
+        color: rgb(24, 85, 24);
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        width: 100%;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+    
+      .botonPaginado{
+        width: 50px;
+        height: 25px;
+        border: 2px;
+        border-style: outset;
+        border-radius: 6px;
+        background-color: rgb(24, 85, 24);
+        color: white;
+        font-weight: bold;
+      }
+
+      .botonPaginado #nroPagina{
+        width: 70px;
+        height: 25px;
+        border: 2px;
+        border-style: outset;
+        border-radius: 6px;
+        background-color: rgb(24, 85, 24);
+        color: white;
+        font-weight: bold;
+      }
+    
+      .botonPaginadoApagado{
+        width: 50px;
+        height: 25px;
+        border-radius: 6px;
+        border: 1px;
+        border-style: inset;
+        background-color: rgb(156 193 156);
+        color: #6d6969;
+        font-weight: bold;
+      }
+/*--------------------------------------------------------------------------------------------*/
      footer{
         display: flex;
         flex-direction: row;
@@ -442,4 +691,8 @@ span{
         text-align: center;
      }
     
+     span{
+        margin-left: 10px;
+        margin-top: 10px;
+    }
 }
