@@ -1,14 +1,10 @@
-body{
-    position: absolute;
-    display: flex;
-    background-color: rgb(247 249 248);
-}
+
 
 .contenedor{
     display: flex;
     position: absolute;
     justify-content: flex-start;
-    width: 1500px;
+    width: 100%;
     height: 3440px;
     background-color: rgb(149, 179, 169);
     flex-direction: column;
@@ -69,10 +65,16 @@ nav{
 /*--------------------------------------------------------------------------------------------*/
 .botonesFiltro {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     position: relative;
     text-align: end;
     top: 30px;
+}
+
+.botonesFiltro #contadorTarjetas{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    margin-left: 10px;
 }
 
 .contenedorFiltros{
@@ -113,6 +115,8 @@ section{
     height: 3200px;
     margin-left: 18px;
     margin-top: 30px;
+    align-content: flex-start;
+    flex-wrap: wrap;
 }
 
 #tarjeta {
@@ -120,6 +124,7 @@ section{
     margin: 11px 0px;
     display: grid;
     grid-template-columns: 324px 328px 327px 327px;
+    align-items: start;
 }
 .card{
     background-color: rgb(216, 232, 240);
@@ -138,17 +143,19 @@ section{
     
 }
 .card:hover {
-    transition:cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s;
+    transition:cubic-bezier(0.169, 0.84, 0.44, 1) 0.5s;
     box-shadow: #66636398 10px 10px;
   }
 
 #tarjeta .imgPersonaje{
     width: 280px;
+    transition: 2s;
     
 }
 
 #tarjeta .imgPersonaje:hover {
     transform: scale(1.2);
+    filter: grayscale(90%);
   }
 
 #tarjeta p{
@@ -236,25 +243,26 @@ span{
 /*================== tablet ===============================*/
 /*=========================================================*/
 
-@media (min-width : 650px) and (max-width : 900px){
+@media (min-width : 650px) and (max-width : 1300px){
 
     .contenedor{
         display: flex;
-        position: absolute;
-        justify-content: flex-start;
-        width: 900px;
-        height: 6000px;
-        background-color: rgb(149, 179, 169);
-        flex-direction: column;
-        box-shadow: #8a8a8a47 5px 5px;
+    position: absolute;
+    justify-content: flex-start;
+    width: 100%;
+    height: 6050px;
+    background-color: rgb(149, 179, 169);
+    flex-direction: column;
+    box-shadow: #8a8a8a47 5px 5px;
     }
 /*---------------------------------------------------------------------------------*/
     .titulo{
         display: flex;
-        justify-content: center;
         width: 100%;
         height: 60px;
         background-color: black;
+        flex-direction: column;
+        align-items: center;
     }
 
     h1{
@@ -264,11 +272,10 @@ span{
     .palabras{
         display: flex;
         position: relative;
-        width: 500px;
+        width: 300px;
         height: 60px;
         margin-bottom: 2px;
-        align-items: center;
-        flex-direction: column;
+    
         
     }
     
@@ -279,10 +286,10 @@ span{
     }
     
     .arriba{
-        position: absolute;
+        position: relative;
         display: flex;
         color: #b7ecdb;
-        width: 500px;
+        width: 300px;
         height: 60px;
         justify-content: center;
         flex-direction: column;
@@ -293,7 +300,7 @@ span{
     .abajo{
         position: absolute;
         display: flex;
-        width: 500px;
+        width: 300px;
         height: 60px;
         justify-content: center;
         flex-direction: column;
@@ -305,10 +312,18 @@ span{
 /*-------------------------------------------------------------------------------------------------*/
     .botonesFiltro {
         display: flex;
+        width: 100%;
         justify-content: center;
         position: relative;
         text-align: center;
-
+        flex-direction: column;
+        align-items: center;
+        top: 18px;
+    }
+    .botonesFiltro #contadorTarjetas{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 1.4rem;
+        margin-bottom: 5px;
     }
 
     .contenedorFiltros{
@@ -316,9 +331,9 @@ span{
     }
     
     .filtros{
-        width: 115px;
-        height: 40px;
-        font-size: 16px;
+        width: 113px;
+        height: 38px;
+        font-size: 14px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         font-style:italic;
         margin-left: 8px;

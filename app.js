@@ -7,6 +7,8 @@ let $hombreBoton = document.getElementById('hombres');
 let $sinGeneroBoton = document.getElementById('sin');
 let $desconocidoBoton = document.getElementById('desconocido');
 let $todosBoton = document.getElementById('todos');
+let $contador = document.getElementById('contadorTarjetas');
+
 //------------paginado
 let $principioBoton = document.getElementById('principio');
 let $menosBoton = document.getElementById('antes');
@@ -36,7 +38,9 @@ function usarFetch(numeroPagina){
     .then((datos)=>{
         personajes = datos.results;
         mostrar(personajes);
+        
     });
+    
 }
 
 //-------------------------------------------
@@ -51,6 +55,8 @@ usarFetch(pagina);
     $principioBoton.classList.add('botonPaginadoApagado');
     $menosBoton.classList.remove('botonPaginado');
     $menosBoton.classList.add('botonPaginadoApagado');
+
+
 
         // ............ FUNCION MOSTRAR .............................
 
@@ -71,7 +77,9 @@ for(let i = 0; i < array.length; i++){
                         
                             </div>`
 }
-console.log(personajes);
+        let cantidad = array.length;
+        console.log(cantidad);
+        $contador.innerHTML = `Cantidad de personajes: ${cantidad}`
 }
 
 //--------------------------------------
