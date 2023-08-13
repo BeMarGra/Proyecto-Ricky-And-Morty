@@ -1,4 +1,13 @@
-// ---- elementos del html
+// ---- ELEMENTOS DEL HTML
+
+//--------------- menu responsive
+let $menuBoton = document.getElementById('menu');
+let $cerrarBoton = document.getElementById('cerrar');
+let $menuTodos = document.getElementById('opcion1')
+let $menuMuejeres = document.getElementById('opcion2')
+let $menuHombres = document.getElementById('opcion3')
+let $menuSGenero = document.getElementById('opcion4')
+let $menuDesconocido = document.getElementById('opcion5')
 
 //------------filtros
 let $tarjeta = document.getElementById('tarjeta');
@@ -168,6 +177,40 @@ function filtrarDesconocido(){
 mostrar(resultadoTres);
 }   
 
+//-------------------- filtros menu responsive-------------------
+
+function filtrarTodosResponsive(){
+
+    mostrar(personajes);
+}  
+
+function filtrarMujeresResponsive(){
+    resultadoCuatro = personajes.filter((personaje)=>{
+       return personaje.gender === 'Female';
+    })
+mostrar(resultadoCuatro);
+}   
+
+function filtrarHombresResponsive(){
+    resultadoUno = personajes.filter((personaje)=>{
+       return personaje.gender === 'Male';
+    })
+mostrar(resultadoUno);
+}   
+
+function filtrarSinGeneroResponsive(){
+    resultadoDos = personajes.filter((personaje)=>{
+       return personaje.gender === 'genderless';
+    })
+mostrar(resultadoDos);
+}   
+
+function filtrarDesconocidoResponsive(){
+    resultadoTres = personajes.filter((personaje)=>{
+       return personaje.gender === 'unknown';
+    })
+mostrar(resultadoTres);
+}   
 
 //--------------------------------------------------------------
 //----------------------PAGINADOS-------------------------------
@@ -283,17 +326,39 @@ function ultima(){
         $menosBoton.classList.add('botonPaginado');
 }
 
+function menu(){
+    document.getElementById('listaMenu').style.display = 'block';
+}
 
-//------eventos-----
 
+function cerrar(){
+    document.getElementById('listaMenu').style.display = 'none';
+    filtrarTodosResponsive()
+}
+
+//============================================================
+//----------------- EVENTOS -------------------------------
+
+
+//---------------botones filtrado ----------------------
 $mujerBoton.addEventListener('click',filtrarMujeres)
 $hombreBoton.addEventListener('click',filtrarHombres)
 $sinGeneroBoton.addEventListener('click',filtrarSinGenero)
 $desconocidoBoton.addEventListener('click',filtrarDesconocido)
 $todosBoton.addEventListener('click',filtrarTodos)
-//------------------------------------------------------
 
+//------------------ Botones Paginado ----------------------
+
+$finalBoton.addEventListener('click',ultima)
 $principioBoton.addEventListener('click',primera)
 $masBoton.addEventListener('click',siguiente)
 $menosBoton.addEventListener('click',anterior)
-$finalBoton.addEventListener('click',ultima)
+$menuBoton.addEventListener('click',menu)
+$cerrarBoton.addEventListener('click',cerrar)
+
+//---------------menu filtrado responsive------------------------------------------
+$menuMuejeres.addEventListener('click',filtrarMujeresResponsive)
+$menuHombres.addEventListener('click',filtrarHombresResponsive)
+$menuSGenero.addEventListener('click',filtrarSinGeneroResponsive)
+$menuDesconocido.addEventListener('click',filtrarDesconocidoResponsive)
+$menuTodos.addEventListener('click',filtrarTodosResponsive)

@@ -1,16 +1,21 @@
-
-
 .contenedor{
     display: flex;
     position: absolute;
     justify-content: flex-start;
-    width: 100%;
+    width: 1700px;
     height: 3440px;
     background-color: rgb(149, 179, 169);
     flex-direction: column;
     box-shadow: #8a8a8a47 5px 5px;
 }
 /*--------------------------------------------------------------------------------------------------*/
+.botonMenu{
+    display: none;
+    position: absolute;
+    background-color: black;
+    width: 50px;
+}
+
 .titulo{
     display: flex;
     justify-content: center;
@@ -29,7 +34,6 @@ h1{
     width: 500px;
     height: 123px;
     margin-bottom: auto;
-    
 }
 
 nav{
@@ -69,6 +73,10 @@ nav{
     position: relative;
     text-align: end;
     top: 30px;
+}
+#listaMenu{
+    position: relative;
+    display: none;
 }
 
 .botonesFiltro #contadorTarjetas{
@@ -239,21 +247,21 @@ span{
 /* ---------------------------Responsive------------------------------*/
 /*--------------------------------------------------------------------*/
 
-/*=========================================================*/
-/*================== tablet ===============================*/
-/*=========================================================*/
+/*====================================================================================*/
+/*================================ tablet horizontal =================================*/
+/*====================================================================================*/
 
-@media (min-width : 650px) and (max-width : 1300px){
+@media (min-width : 1060px) and (max-width : 1300px){
 
     .contenedor{
         display: flex;
-    position: absolute;
-    justify-content: flex-start;
-    width: 100%;
-    height: 6050px;
-    background-color: rgb(149, 179, 169);
-    flex-direction: column;
-    box-shadow: #8a8a8a47 5px 5px;
+        position: absolute;
+        justify-content: flex-start;
+        width: 100%;
+        height: 4350px;
+        background-color: rgb(149, 179, 169);
+        flex-direction: column;
+        box-shadow: #8a8a8a47 5px 5px;
     }
 /*---------------------------------------------------------------------------------*/
     .titulo{
@@ -365,6 +373,249 @@ span{
     }
     
     #tarjeta {
+
+        padding: 4px;
+        margin: 11px 0px;
+        display: grid;
+        grid-template-columns: 320px 320px 320px;
+        justify-content: center;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(216, 232, 240);
+        width: 300px;
+        height: 555px;
+        margin-bottom: 20px;
+
+    }
+    .contenedorImg{
+        display: flex;
+        position: relative;
+        width: 280px;
+        margin-top: 10px;
+        margin-left: 10px;
+        overflow: hidden;
+        
+        
+    }
+    .card:hover {
+        transition:cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s;
+        box-shadow: #66636398 10px 10px;
+      }
+    
+    #tarjeta .imgPersonaje{
+        width: 280px;
+        
+    }
+    
+    #tarjeta .imgPersonaje:hover {
+        transform: scale(1.2);
+      }
+    
+    #tarjeta p{
+        
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 14px;
+    }
+    
+    #tarjeta h2{
+        font-family: 'Cardo', serif;
+        font-family: 'Lumanosimo', cursive;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        margin-left: 4px;
+        font-size: 20px;
+    }
+    /*------------------------------------------------------------------------------------------------*/
+    .cotenedorPaginado {
+        display: flex;
+        color: rgb(24, 85, 24);
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        width: 100%;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+    
+      .botonPaginado{
+        width: 50px;
+        height: 25px;
+        border: 2px;
+        border-style: outset;
+        border-radius: 6px;
+        background-color: rgb(24, 85, 24);
+        color: white;
+        font-weight: bold;
+      }
+
+      .botonPaginado #nroPagina{
+        width: 70px;
+        height: 25px;
+        border: 2px;
+        border-style: outset;
+        border-radius: 6px;
+        background-color: rgb(24, 85, 24);
+        color: white;
+        font-weight: bold;
+      }
+    
+      .botonPaginadoApagado{
+        width: 50px;
+        height: 25px;
+        border-radius: 6px;
+        border: 1px;
+        border-style: inset;
+        background-color: rgb(156 193 156);
+        color: #6d6969;
+        font-weight: bold;
+      }
+      /*-------------------------------------------------------------------------------*/
+     footer{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 120px;
+        background-color: black;
+        color: white;
+        text-align: center;
+     }
+
+     span{
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    
+}
+
+/*======================================================================================*/
+/*================= tablet vertical / celular horizontal================================*/
+/*======================================================================================*/
+
+@media (min-width : 800px) and (max-width : 1059px){
+
+    .contenedor{
+        display: flex;
+        position: absolute;
+        justify-content: flex-start;
+        width: 100%;
+        height: 6050px;
+        background-color: rgb(149, 179, 169);
+        flex-direction: column;
+        box-shadow: #8a8a8a47 5px 5px;
+    }
+/*---------------------------------------------------------------------------------*/
+    .titulo{
+        display: flex;
+        width: 100%;
+        height: 60px;
+        background-color: black;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1{
+        font-size: 2.5rem;
+    }
+
+    .palabras{
+        display: flex;
+        position: relative;
+        width: 300px;
+        height: 60px;
+        margin-bottom: 2px;
+    }
+    
+    nav{
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 40px;
+    }
+    
+    .arriba{
+        position: relative;
+        display: flex;
+        color: #b7ecdb;
+        width: 300px;
+        height: 60px;
+        justify-content: center;
+        flex-direction: column;
+        right: 2px;
+        bottom: 2px;
+    }
+    
+    .abajo{
+        position: absolute;
+        display: flex;
+        width: 300px;
+        height: 60px;
+        justify-content: center;
+        flex-direction: column;
+        color: rgb(45, 81, 241);
+        left: 2px;
+        bottom: 2px;
+        
+    }
+/*-------------------------------------------------------------------------------------------------*/
+    .botonesFiltro {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        top: 18px;
+    }
+
+    .botonesFiltro #contadorTarjetas{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+    }
+
+    .contenedorFiltros{
+        width: 650px;
+    }
+    
+    .filtros{
+        width: 113px;
+        height: 38px;
+        font-size: 14px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-style:italic;
+        margin-left: 8px;
+        background-image:linear-gradient(rgb(215, 245, 235),rgb(202, 230, 216));
+        border: 2px;
+        border-style: outset;
+    }
+    
+    .botonFiltroApretado{
+        width: 115px;
+        height: 40px;
+        font-size: 16px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-style: italic;
+        margin-left: 8px;
+        color: rgb(242 245 244);
+        border: 3px;
+        border-style: inset;
+        background-color: rgb(78 145 99);
+    }
+    /*--------------------------------------------------------------------------------------*/
+    section{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 6200px;
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+    
+    #tarjeta {
+
         padding: 4px;
         margin: 11px 0px;
         display: grid;
@@ -481,29 +732,47 @@ span{
     
 }
 
-/*================================================================*/
-/*======================== celular ===============================*/
-/*================================================================*/
 
-@media (min-width : 320px) and (max-width : 649px){
+/*====================================================================================*/
+/*================================== celular vertical ================================*/
+/*====================================================================================*/
+
+@media (max-width : 799px){
     
     .contenedor{
         display: flex;
         position: absolute;
         justify-content: flex-start;
         width: 650px;
-        height: 11050px;
+        height: 11900px;
         background-color: rgb(149, 179, 169);
         flex-direction: column;
-        box-shadow: #8a8a8a47 5px 5px;
+        box-shadow: hsla(0, 0%, 54%, 0.278) 5px 5px;
     }
 /*-------------------------------------------------------------------------*/
+    .botonMenu{
+        display:grid;
+        position: absolute;
+        background-color: black;
+        width: 30px;
+        height: 25px;
+        margin-top: 6px;
+        margin-left: 10px;
+        transition: 1.5s;
+    }
+
+    .botonMenu:hover {
+        transform: scale(1.2);
+    }
+
     .titulo{
         display: flex;
         justify-content: center;
         width: 100%;
         height: 60px;
         background-color: black;
+        align-content: center;
+        align-items: center;
     }
 
     h1{
@@ -513,8 +782,8 @@ span{
     .palabras{
         display: flex;
         position: relative;
-        width: 500px;
-        height: 60px;
+        width: 300px;
+        height: 40px;
         margin-bottom: 2px;
         align-items: center;
         flex-direction: column;
@@ -531,69 +800,78 @@ span{
         position: absolute;
         display: flex;
         color: #b7ecdb;
-        width: 350px;
+        width: 300px;
         height: 40px;
         justify-content: center;
         flex-direction: column;
-        /* right: 2px;
-        bottom: 2px; */
     }
     
     .abajo{
         position: absolute;
         display: flex;
-        width: 350px;
+        width: 300px;
         height: 40px;
         justify-content: center;
         flex-direction: column;
         color: rgb(45, 81, 241);
-        /* left: 2px;
-        bottom: 2px; */
     }
 /*-----------------------------------------------------------------------------------*/
-    /* .botonesFiltro {
+    .botonesFiltro {
         display: flex;
-        justify-content: center;
-        position: relative;
-        text-align: center;
+        justify-content: space-around;
+        top: 8px
     }
 
     .contenedorFiltros{
         width: 650px;
+        display: none;
     }
     
-    .filtros{
-        width: 115px;
+    #listaMenu{
+        width: 100px;
         height: 40px;
-        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 0;
+        /* align-items: flex-start; */
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-style:italic;
-        margin-left: 8px;
-        background-image:linear-gradient(rgb(215, 245, 235),rgb(202, 230, 216));
-        border: 2px;
-        border-style: outset;
+        margin-left: 10px;
     }
-    
-    .botonFiltroApretado{
-        width: 115px;
-        height: 40px;
-        font-size: 16px;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-style: italic;
-        margin-left: 8px;
-        color: rgb(242 245 244);
-        border: 3px;
-        border-style: inset;
-        background-color: rgb(78 145 99);
+    /* .botonesFiltro #listaMenu{
+        width: 40px;
+        height: 30px;
     } */
+
+    .opciones{
+        font-size: 15px;
+        transition: 1.5s;
+        text-align: start ;
+    }
+
+    .opciones:hover{
+        transform: scale(1.15);
+        color: rgb(24, 85, 24);
+    }
+
+    #listaMenu p{
+        margin-bottom: 3px;  
+    }
+
+    .botonesFiltro #contadorTarjetas{
+        flex-grow: 3;
+        margin-right: 40px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 1.2rem;
+    }
+
 /*--------------------------------------------------------------------------------*/
     section{
         display: flex;
         justify-content: center;
         width: 100%;
-        height: 10800px;
+        height: 17100px;
         margin-left: 0px;
-        margin-top: 30px;
+        margin-top: 10px;
     }
     
     #tarjeta {
@@ -652,6 +930,7 @@ span{
     }
 /*------------------------------------------------------------------------------------------*/
     .cotenedorPaginado {
+        position:relative;
         display: flex;
         color: rgb(24, 85, 24);
         font-weight: bold;
