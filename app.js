@@ -24,7 +24,7 @@ let $menosBoton = document.getElementById('antes');
 let $numeroPagina = document.getElementById('nroPagina')
 let $masBoton = document.getElementById('despues');
 let $finalBoton = document.getElementById('final');
-
+let $nroPaginaUsuario = document.getElementById('pagina');
 
 //---variables 
 
@@ -36,6 +36,7 @@ let resultadoDos ;
 let resultadoTres ;
 let resultadoCuatro ;
 let pagina = 1 ;
+let numeroIngresado ;
 
 //---fetch
 
@@ -57,7 +58,7 @@ function usarFetch(numeroPagina){
 //-------------------------------------------
 
 usarFetch(pagina);
-    $numeroPagina.innerHTML = `Pág. ${pagina}/42`;
+    $nroPaginaUsuario.innerHTML = `${pagina}`;
     $principioBoton.disabled = true;
     $menosBoton.disabled = true;
     $principioBoton.classList.remove('botonPaginado');
@@ -220,7 +221,7 @@ function primera(){
     pagina=1;
     usarFetch(pagina);
 
-        $numeroPagina.innerHTML = `Pág. 1/42`;
+        $nroPaginaUsuario.innerHTML = `${pagina}`;
 
         $principioBoton.disabled = true;
         $menosBoton.disabled = true;
@@ -242,7 +243,7 @@ function primera(){
 function anterior(){
     pagina--;
     usarFetch(pagina);
-        $numeroPagina.innerHTML = `Pág. ${pagina}/42`;
+        $nroPaginaUsuario.innerHTML = `${pagina}`;
 
         $principioBoton.disabled = false;
         $menosBoton.disabled = false;
@@ -261,7 +262,7 @@ function anterior(){
       
     if (pagina === 1){
         usarFetch(pagina);
-            $numeroPagina.innerHTML = `Pág. 1/42`;
+            $nroPaginaUsuario.innerHTML = `${pagina}`;
 
             $principioBoton.disabled = true;
             $menosBoton.disabled = true;
@@ -276,7 +277,7 @@ function anterior(){
 function siguiente(){
     pagina++;
     usarFetch(pagina);
-        $numeroPagina.innerHTML = `Pág. ${pagina}/42`;
+        $nroPaginaUsuario.innerHTML = `${pagina}`;
 
         $principioBoton.disabled = false;
         $menosBoton.disabled = false;
@@ -309,7 +310,7 @@ function ultima(){
 
         pagina = 42;
         usarFetch(pagina);    
-        $numeroPagina.innerHTML = `Pág. 42/42`;
+        $nroPaginaUsuario.innerHTML = `${pagina}`;
         $finalBoton.disabled = true;
         $masBoton.disabled = true;
         $principioBoton.disabled = false;
@@ -325,6 +326,17 @@ function ultima(){
         $menosBoton.classList.remove('botonPaginadoApagado');
         $menosBoton.classList.add('botonPaginado');
 }
+// function paginaUsuario(){
+//     numeroIngresado = prompt(number(''),)
+//     console.log(numeroIngresado)
+//     usarFetch(numeroIngresado);
+//     if (numeroIngresado === 42){
+//         ultima()
+//     } else if (numeroIngresado === 1){
+//         primera()
+//     }
+// }
+
 
 function menu(){
     document.getElementById('listaMenu').style.display = 'block';
@@ -355,6 +367,7 @@ $masBoton.addEventListener('click',siguiente)
 $menosBoton.addEventListener('click',anterior)
 $menuBoton.addEventListener('click',menu)
 $cerrarBoton.addEventListener('click',cerrar)
+// $nroPaginaUsuario.addEventListener('click',paginaUsuario)
 
 //---------------menu filtrado responsive------------------------------------------
 $menuMuejeres.addEventListener('click',filtrarMujeresResponsive)
