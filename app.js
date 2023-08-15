@@ -26,6 +26,12 @@ let $masBoton = document.getElementById('despues');
 let $finalBoton = document.getElementById('final');
 let $nroPaginaUsuario = document.getElementById('pagina');
 
+//------------- Ver Mas
+
+let $verMasBoton = document.getElementById('masInfo');
+let $infoVentana = document.getElementById('infoVentana');
+let $cerrarVentanaB = document.getElementById('cerrarVentana');
+
 //---variables 
 
 let listaPorGenero ;
@@ -58,7 +64,7 @@ function usarFetch(numeroPagina){
 //-------------------------------------------
 
 usarFetch(pagina);
-    $nroPaginaUsuario.innerHTML = `${pagina}`;
+    $nroPaginaUsuario.innerHTML = `${pagina}/42`;
     $principioBoton.disabled = true;
     $menosBoton.disabled = true;
     $principioBoton.classList.remove('botonPaginado');
@@ -72,11 +78,12 @@ usarFetch(pagina);
 
 function mostrar(array){
     $tarjeta.innerHTML = '';
-for(let i = 0; i < array.length; i++){
+    for(let i = 0; i < array.length; i++){
     $tarjeta.innerHTML +=   `<div class="card">
                                     <div class="contenedorImg">
                                         <img class="imgPersonaje" src=${array[i].image}>
                                     </div>
+                                    <div>
                                     <p>Nombre:  </p>
                                     <h2>${array[i].name}</h2>
                                     <p>Genero: ${array[i].gender}</p>
@@ -84,9 +91,9 @@ for(let i = 0; i < array.length; i++){
                                     <p>Estado: ${array[i].status}</p>
                                     <p>Origen: ${array[i].origin.name}</p>
                                     <p>Locación: ${array[i].location.name}</p>
-                        
+                                    </div>
                             </div>`
-}
+    }
         let cantidad = array.length;
         console.log(cantidad);
         $contador.innerHTML = `Cantidad de personajes: ${cantidad}`
@@ -221,7 +228,7 @@ function primera(){
     pagina=1;
     usarFetch(pagina);
 
-        $nroPaginaUsuario.innerHTML = `${pagina}`;
+        $nroPaginaUsuario.innerHTML = `${pagina}/42`;
 
         $principioBoton.disabled = true;
         $menosBoton.disabled = true;
@@ -243,7 +250,7 @@ function primera(){
 function anterior(){
     pagina--;
     usarFetch(pagina);
-        $nroPaginaUsuario.innerHTML = `${pagina}`;
+        $nroPaginaUsuario.innerHTML = `${pagina}/42`;
 
         $principioBoton.disabled = false;
         $menosBoton.disabled = false;
@@ -262,7 +269,7 @@ function anterior(){
       
     if (pagina === 1){
         usarFetch(pagina);
-            $nroPaginaUsuario.innerHTML = `${pagina}`;
+            $nroPaginaUsuario.innerHTML = `${pagina}/42`;
 
             $principioBoton.disabled = true;
             $menosBoton.disabled = true;
@@ -277,7 +284,7 @@ function anterior(){
 function siguiente(){
     pagina++;
     usarFetch(pagina);
-        $nroPaginaUsuario.innerHTML = `${pagina}`;
+        $nroPaginaUsuario.innerHTML = `${pagina}/42`;
 
         $principioBoton.disabled = false;
         $menosBoton.disabled = false;
@@ -310,7 +317,7 @@ function ultima(){
 
         pagina = 42;
         usarFetch(pagina);    
-        $nroPaginaUsuario.innerHTML = `${pagina}`;
+        $nroPaginaUsuario.innerHTML = `${pagina}/42`;
         $finalBoton.disabled = true;
         $masBoton.disabled = true;
         $principioBoton.disabled = false;
@@ -326,17 +333,6 @@ function ultima(){
         $menosBoton.classList.remove('botonPaginadoApagado');
         $menosBoton.classList.add('botonPaginado');
 }
-// function paginaUsuario(){
-//     numeroIngresado = prompt(number(''),)
-//     console.log(numeroIngresado)
-//     usarFetch(numeroIngresado);
-//     if (numeroIngresado === 42){
-//         ultima()
-//     } else if (numeroIngresado === 1){
-//         primera()
-//     }
-// }
-
 
 function menu(){
     document.getElementById('listaMenu').style.display = 'block';
@@ -367,7 +363,6 @@ $masBoton.addEventListener('click',siguiente)
 $menosBoton.addEventListener('click',anterior)
 $menuBoton.addEventListener('click',menu)
 $cerrarBoton.addEventListener('click',cerrar)
-// $nroPaginaUsuario.addEventListener('click',paginaUsuario)
 
 //---------------menu filtrado responsive------------------------------------------
 $menuMuejeres.addEventListener('click',filtrarMujeresResponsive)
@@ -375,3 +370,4 @@ $menuHombres.addEventListener('click',filtrarHombresResponsive)
 $menuSGenero.addEventListener('click',filtrarSinGeneroResponsive)
 $menuDesconocido.addEventListener('click',filtrarDesconocidoResponsive)
 $menuTodos.addEventListener('click',filtrarTodosResponsive)
+
