@@ -370,4 +370,3 @@ $menuHombres.addEventListener('click',filtrarHombresResponsive)
 $menuSGenero.addEventListener('click',filtrarSinGeneroResponsive)
 $menuDesconocido.addEventListener('click',filtrarDesconocidoResponsive)
 $menuTodos.addEventListener('click',filtrarTodosResponsive)
-
